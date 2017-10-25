@@ -1,0 +1,85 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  background: #c1bdba;
+  
+  /*font-family: 'Titillium Web', sans-serif;*/
+}
+/*
+.form {
+  background: #EEEEEE;
+  padding: 40px;
+  max-width: 600px;
+  margin: 20px auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+}*/
+
+.form-control { 
+  margin-bottom: 10px; 
+  }
+
+.button {
+  border: 0;
+  outline: none;
+  border-radius: 1%;
+  padding: 15px 0;
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background: #00BCD4;
+  color: #ffffff;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+}
+.button:hover, .button:focus {
+  background: #4e4343;
+}
+
+.button-block {
+  display: block;
+  width: 100%;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+#search_text {
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+table{
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+ 
+}
+
+table th, table td {
+  text-align: left;
+  padding: 12px;
+}
+
+table tr {
+  border-bottom: 1px solid #ddd;
+}
+
+table tr.header, table tr:hover {
+  background-color: #f1f1f1;
+}
