@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  background: #c1bdba;
+  background: white;
   font-family: "Lato", sans-serif;
 
   
@@ -34,11 +34,10 @@ body {
   border: 0;
   outline: none;
   border-radius: 1%;
-  padding: 15px 0;
-  font-size: 2rem;
+  padding: 15px 15px;
+  font-size: 15px;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .1em;
+  letter-spacing: .05em;
   background: #00BCD4;
   color: #ffffff;
   -webkit-transition: all 0.5s ease;
@@ -46,12 +45,12 @@ body {
   -webkit-appearance: none;
 }
 .button:hover, .button:focus {
-  background: #4e4343;
+  background: #384452;
 }
 
 .button-block {
   display: block;
-  width: 100%;
+  float: right;
 }
 
 
@@ -108,7 +107,7 @@ div.tab-health button.active {
     width: 100%;
 }
 
-#health-report-table td, #search-table th {
+#health-report-table td, #health-report-table th {
     border: 1px solid #ddd;
     padding: 8px;
 }
@@ -137,4 +136,20 @@ div.tab-health button.active {
   border: 1px solid #ddd;
   margin-bottom: 12px;
 }
+
+.box.box-primary {
+    border-top-color: #3c8dbc;
+}
+
+.box {
+    position: relative;
+    border-radius: 3px;
+    background: whitesmoke;
+    border-top: 3px solid #d2d6de;
+    margin: 20px;
+    padding: 10px;
+    width: 100%;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}        
+        
 
