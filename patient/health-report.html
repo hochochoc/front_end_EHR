@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Home admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/patient.css">
+    <link rel="stylesheet" href="../css/chat-advice.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+    
+</head>
+<body>
+    <header class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="home-patient.html">EHR.</a>
+            </div>
+            <div class="navbar-collapse collapse navbar-right">
+                <ul class="nav navbar-nav">
+                    <li ><a href="home-patient.html">Trang chủ</a></li>
+                    <li ><a href="daily-record.html">Báo cáo sức khỏe</a></li>
+                    <li class="active"><a href="health-report.html">Bệnh án</a></li>
+                    <li ><a href="chat-advice.html">Tư vấn sức khỏe</a></li>
+                    <li class="username dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="hidden-xs">Username</span><b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Đăng xuất</a></li>
+                            <li><a href="#">Đổi mật khẩu</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </header>
+    <div class="container mtb">
+        <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 centered well well-sm">
+                    <div class="tab">
+                        <button class="tablinks" onclick="openTab(event, 'benhAn')" id="defaultOpen">Bệnh án</button>
+                        <button class="tablinks" onclick="openTab(event, 'chanDoan')">Chẩn đoán bệnh</button>
+                        <button class="tablinks" onclick="openTab(event, 'phapDo')">Phác đồ điều trị</button>
+                    </div>
+               <div id="benhAn" class="tabcontent">
+                    <div class="form">
+                        <div class="row">
+                            <div class="col-xs-6 col-md-6">
+                                <label>Bác sĩ:</label>
+                                <p>Tên bác sĩ</p>
+                            </div>
+                            <div class="col-xs-6 col-md-6">
+                                <label>Bệnh nhân:</label>
+                                <p>Tên bệnh nhân (thêm thông tin kèm theo để phân biệt)</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6 col-md-6">
+                                <label>Lĩnh vực:</label>
+                                <p>Tên lĩnh vực</p>
+                            </div>
+                            <div class="col-xs-6 col-md-6">
+                                <label>Ngày khám:</label>
+                                <p>Ngày khám</p>
+                            </div>
+                        </div>
+                        <label>Lý do khám bệnh:</label>
+                        <p>Lý do khám bệnh </p>
+                        
+                        </br>
+            
+                        <label>Quá trình bệnh lý:</label>
+                        <p>Quá trình bệnh lý</p>
+                        
+                        </br>
+                        <label>Tiền sử bệnh:</label>
+                        <p>Tiền sử bệnh</p>
+                        
+                        </br>
+            
+                        <label>Hướng điều trị:</label>
+                        <p>Hướng điều trị</p>
+                        
+                        </br>
+            
+                        <label>Tóm tắt bệnh án:</label>
+                        <p>Tóm tắt bệnh án</p>
+                        
+                        </br>
+            
+                        <label>Khác:</label>
+                        <p>Khác aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAA,</p>
+                        <label>Ngày tạo:</label>
+                        <p>Ngày tạo</p>
+                        </br>
+                        
+                    </div>
+                </div>
+
+                <div id="chanDoan" class="tabcontent">
+                    <div class="form">
+                        <div class="row">
+                            <div class="col-xs-6 col-md-6">
+                                <label>Bệnh án: Mã bệnh án</label> 
+                            </div>
+                            <div class="col-xs-6 col-md-6">
+                                <label>Ngày chẩn đoán: 27/11/1992</label>
+                            </div>
+                        </div>
+                        <label>Bệnh chính</label>
+                        <p>Bệnh chính AA</p>
+                        <label>Bệnh kèm theo</label>
+                        <p>Bệnh kèm theo AA</p>
+                        
+                    </div>
+                </div>
+
+                <div id="phapDo" class="tabcontent">
+                    <div class="form">
+                        <div class="row">
+                            <div class="col-xs-6 col-md-6">
+                                <label>Mã bệnh án: mã bệnh án</label>
+                            </div>
+                            <div class="col-xs-6 col-md-6">
+                                <label>Thời gian: ngày chẩn đoán</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6 col-md-6">
+                                <label>Tiêu đề: tiêu đề</label>
+                            </div>
+                            <div class="col-xs-6 col-md-6">
+                                <label>Ngày tạo: ngày tạo phác đồ</label>
+                            </div>
+                        </div>
+                        <label>Nội dung:</label>
+                        <p>Nội dung phác đồ</p>
+                        <label>Nhắc nhở: Có hoặc ko</label>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="../js/tab-report-management.js"></script>
+</body>
+</html>

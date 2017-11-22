@@ -28,8 +28,8 @@
             </div>
             <div class="navbar-collapse collapse navbar-right">
                 <ul class="nav navbar-nav">
-                    <li ><a href="home-doctor.html">Trang chủ</a></li>
-                    <li class="active"><a href="health-report-management.html">Bệnh án</a></li>
+                    <li class="active"><a href="home-doctor.html">Trang chủ</a></li>
+                    <li ><a href="health-report-management.html">Bệnh án</a></li>
                     <li><a href="chat-advice-doctor.html">Tư vấn sức khỏe</a></li>
                     <li class="username dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="hidden-xs">Username</span><b class="caret"></b></a>
@@ -42,5 +42,139 @@
             </div><!--/.nav-collapse -->
         </div>
     </header>
-    <div class="container mtb"></div>
+    <div class="container mtb">
+        <div class="row">
+            <div class="col-xs-3 col-md-3">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">About Me</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <strong><i class="fa fa-book margin-r-5"></i>Thông tin tài khoản</strong>
+                        <p class="text-muted">
+                            Tên tài khoản: ${bs.taiKhoan}
+                        </p>
+                        <p class="text-muted">
+                            Họ và tên: ${bs.hoTen}
+                        </p>
+                        <p class="text-muted">
+                            Giới tính: ${bs.gioiTinh}
+                        </p>
+                        <p class="text-muted">
+                            Ngày sinh: ${bs.ngaySinh}
+                        </p>
+
+                        <hr>
+
+                        <strong><i class="fa fa-map-marker margin-r-5"></i>Liên lạc</strong>
+                        <p class="text-muted">Quốc tịch: ${bs.quocTich}</p>
+                        <p class="text-muted">Nơi ở hiện tại: ${bs.noiOHienTai}</p>
+                        <p class="text-muted">Quê quán: ${bs.queQuan}</p>
+                        <p class="text-muted">Điện thoại: ${bs.soDienThoai}</p>
+                        <p class="text-muted">Email: ${bs.email}</p>
+                        <hr>
+
+                        <strong><i class="fa fa-pencil margin-r-5"></i> Kinh nghiệm</strong>
+
+                        <p class="text-muted">Năm kinh nghiệm: ${bs.namKinhNghiem}</p>
+
+                        <hr>
+
+                        <strong><i class="fa fa-file-text-o margin-r-5"></i> Notes</strong>
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+            </div>
+            <div class="col-xs-8 col-md-8">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Cập nhật tài khoản</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <form action="${pageContext.request.contextPath}/bacsi/suathongtin.html?maBacSi=${bs.maBacSi}" method="POST" class="form" role="form">
+                            <div class="row"> 
+                                <div class="col-xs-6 col-md-6">
+                                    <label>Tài khoản:</label>
+                                    <input class="form-control" value="${bs.taiKhoan}" name="taiKhoan" placeholder="Tên tài khoản" type="text" required autofocus/> 
+                                </div>
+                                <div class="col-xs-6 col-md-6">
+                                    <label>Mật khẩu:</label> 
+                                    <input class="form-control" value="${bs.matKhau}"name="matKhau" placeholder="Mật khẩu" type="text" required />
+                                </div>
+                            </div>
+
+                            <label>Họ và tên:</label>
+                            <input class="form-control" value="${bs.hoTen}" name="hoTen" placeholder="Họ và tên" type="text" required/>
+                            
+                            </br>
+
+                            <label>Giới tính:</label>
+                            </br>
+                            <label class="radio-inline">
+                                <input type="radio" name="gioiTinh" id="inlineCheckbox1" value="Nam" />
+                                Nam
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="gioiTinh" id="inlineCheckbox2" value="Nữ" />
+                                Nữ
+                            </label>
+                            </br>
+                            </br>
+
+                            <label>Ngày sinh:</label>
+                            <input class="form-control" value="${bs.ngaySinh}" name="ngaySinh" placeholder="Ngày sinh" type="date" required/>
+                            
+                            </br>
+
+                            <div class="row">
+                                <div class="col-xs-6 col-md-6">
+                                    <label>Email</label>
+                                    <input class="form-control" value="${bs.email}" name="email" placeholder="Địa chỉ email" type="email" required/> 
+                                </div>
+                                <div class="col-xs-6 col-md-6">
+                                    <label>ĐTDĐ:</label>
+                                    <input class="form-control" value="${bs.soDienThoai}" name="soDienThoai" placeholder="Điện thoại" type="text" required /> 
+                                </div>
+                            </div>
+                            </br>
+
+                            <label>Quốc tịch:</label>
+                            <input class="form-control" value="${bs.quocTich}" name="quocTich" placeholder="Quốc tịch" type="text" required/>
+                            
+                            </br>
+
+                            <label>Nơi ở hiện tại:</label>
+                            <textarea class="form-control" name="noiOHienTai" placeholder="Nơi ở hiện tại" required>${bs.noiOHienTai}</textarea>
+                            
+                            </br>
+
+                            <label>Quê quán:</label>
+                            <textarea class="form-control" name="queQuan" placeholder="Quê quán" required>${bs.queQuan}</textarea>
+                            
+                            </br>
+
+                            <label>Số CMND:</label>
+                            <input class="form-control" value="${bs.soCMND}" name="soCMND" placeholder="Số CMND" type="text" required/>
+                            
+                            </br>
+
+                            <label>Năm kinh nghiệm:</label>
+                            <input class="form-control" value="${bs.namKinhNghiem}" name="namKinhNghiem" placeholder="Năm kinh nghiệm" type="text" required/>
+                                                                
+                            
+                            <button class="button button-block" type="submit">
+                                Cập nhật mới</button>    
+
+                        </form>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+</html>
