@@ -95,6 +95,58 @@
                 
             </div>
         </div>
+        <div id="qlba_modal_update" class="modal">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Thông tin tài khoản bác sĩ</h2>
+                </div>
+                <div class="modal-body">
+                    <h1> Bác six adjfkj</h1>
+                    <button type="button" class="button button-block" data-toggle="collapse" data-target="#update-acc-doctor">Sửa thông tin</button>
+                    <div id="update-acc-doctor" class="collapse">
+                        <form action="${pageContext.request.contextPath}/admin/dangkybs.html" method="POST" class="form" role="form">
+
+                            <input class="form-control" name="hoTen" placeholder="Họ và tên" type="text" required/>
+                            <label class="radio-inline">
+                                <input type="radio" name="gioiTinh" id="inlineCheckbox1" value="Nam" />
+                                Nam
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="gioiTinh" id="inlineCheckbox2" value="Nữ" />
+                                Nữ
+                            </label>
+                            </br>
+                            </br>
+                            <input class="form-control" name="ngaySinh" placeholder="Ngày sinh" type="date" required/>
+                    
+                            <div class="row">
+                                <div class="col-xs-6 col-md-6">
+                                    <input class="form-control" name="email" placeholder="Địa chỉ email" type="email" required/> 
+                                </div>
+                                <div class="col-xs-6 col-md-6">
+                                    <input class="form-control" name="soDienThoai" placeholder="Điện thoại" type="text" required /> 
+                                </div>
+                            </div>
+                            <input class="form-control" name="quocTich" placeholder="Quốc tịch" type="text" required/>
+                            <textarea class="form-control" name="noiOHienTai" placeholder="Nơi ở hiện tại" required></textarea>
+                            <textarea class="form-control" name="queQuan" placeholder="Quê quán" required></textarea>
+                            <input class="form-control" name="soCMND" placeholder="Số CMND" type="text" required/>
+                            <input class="form-control" name="namKinhNghiem" placeholder="Năm kinh nghiệm" type="text" required/>
+                            <button class="button button-block" type="submit">
+                                Tạo tài khoản</button>    
+
+                        </form>
+                    </div>
+                    
+                </div>
+                <div class="modal-footer">
+                
+                </div>
+                
+            </div>
+        </div>
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 centered">
                 <div class="panel panel-default panel-table">

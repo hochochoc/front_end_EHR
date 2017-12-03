@@ -1,4 +1,4 @@
-var modal = document.getElementById('qlba-modal');
+var modal = document.getElementById('qlba_modal_update');
 var btn_update = document.getElementById('btn-modal-update');
 
 var span = document.getElementsByClassName("close")[0]
