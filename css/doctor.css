@@ -13,7 +13,12 @@ body {
   /*font-family: 'Titillium Web', sans-serif;*/
 }
 
-
+a {
+  cursor: pointer;
+}
+a:hover {
+  color: black;
+}
 
 /*
 .form {
@@ -184,13 +189,35 @@ color: #999;
     margin: 0;
     padding: 0;
 }
+.ba-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
 .doctor-list-in-box>.item {
     -webkit-box-shadow: none;
     box-shadow: none;
     border-radius: 0;
     border-bottom: 1px solid #f4f4f4;
 }
+
+.ba-list-in-box>.item {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0;
+    border-bottom: 1px solid #f4f4f4;
+}
+
 .doctors-list>.item {
+    border-radius: 3px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    padding: 10px 0;
+    background: #fff;
+}
+
+.ba-list>.item {
     border-radius: 3px;
     -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.1);
     box-shadow: 0 1px 1px rgba(0,0,0,0.1);
@@ -207,6 +234,10 @@ color: #999;
 .doctors-list .doctor-info {
     margin-left: 60px;
 }
+.ba-list .list-info {
+    margin-left: 20px;
+}
+
 .box-footer {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
@@ -251,6 +282,12 @@ div.tab button.active {
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
-}       
+}     
+.pddt {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0;
+    border-bottom: 1px solid #f4f4f4;
+}  
         
 

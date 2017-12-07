@@ -52,7 +52,7 @@
         <div id="qlba-modal" class="modal">
             <div class="modal-content">
                 <div class="modal-header">
-                    <span class="close">&times;</span>
+                    <span class="close" id="close-add">&times;</span>
                     <h2>Thêm tài khoản bác sĩ</h2>
                 </div>
                 <div class="modal-body">
@@ -95,58 +95,7 @@
                 
             </div>
         </div>
-        <div id="qlba_modal_update" class="modal">
-
-            <div class="modal-content">
-                <div class="modal-header">
-                    <span class="close">&times;</span>
-                    <h2>Thông tin tài khoản bác sĩ</h2>
-                </div>
-                <div class="modal-body">
-                    <h1> Bác six adjfkj</h1>
-                    <button type="button" class="button button-block" data-toggle="collapse" data-target="#update-acc-doctor">Sửa thông tin</button>
-                    <div id="update-acc-doctor" class="collapse">
-                        <form action="${pageContext.request.contextPath}/admin/dangkybs.html" method="POST" class="form" role="form">
-
-                            <input class="form-control" name="hoTen" placeholder="Họ và tên" type="text" required/>
-                            <label class="radio-inline">
-                                <input type="radio" name="gioiTinh" id="inlineCheckbox1" value="Nam" />
-                                Nam
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="gioiTinh" id="inlineCheckbox2" value="Nữ" />
-                                Nữ
-                            </label>
-                            </br>
-                            </br>
-                            <input class="form-control" name="ngaySinh" placeholder="Ngày sinh" type="date" required/>
-                    
-                            <div class="row">
-                                <div class="col-xs-6 col-md-6">
-                                    <input class="form-control" name="email" placeholder="Địa chỉ email" type="email" required/> 
-                                </div>
-                                <div class="col-xs-6 col-md-6">
-                                    <input class="form-control" name="soDienThoai" placeholder="Điện thoại" type="text" required /> 
-                                </div>
-                            </div>
-                            <input class="form-control" name="quocTich" placeholder="Quốc tịch" type="text" required/>
-                            <textarea class="form-control" name="noiOHienTai" placeholder="Nơi ở hiện tại" required></textarea>
-                            <textarea class="form-control" name="queQuan" placeholder="Quê quán" required></textarea>
-                            <input class="form-control" name="soCMND" placeholder="Số CMND" type="text" required/>
-                            <input class="form-control" name="namKinhNghiem" placeholder="Năm kinh nghiệm" type="text" required/>
-                            <button class="button button-block" type="submit">
-                                Tạo tài khoản</button>    
-
-                        </form>
-                    </div>
-                    
-                </div>
-                <div class="modal-footer">
-                
-                </div>
-                
-            </div>
-        </div>
+        
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 centered">
                 <div class="panel panel-default panel-table">
@@ -183,7 +132,106 @@
                                     <td>ddddddđ</td>
                                     <td style="text-align:center;">
                                         <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
-                                        <a class="btn btn-primary" id="btn-modal-update"><em class="fa fa-pencil"></em></a>
+                                        <a class="btn btn-primary" href="#qlbs_modal_update_1" data-toggle="modal" data-backdrop="false"><em class="fa fa-pencil"></em></a>
+                                        <div style="text-align:left;" id="qlbs_modal_update_1" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <span class="close" data-dismiss="modal">&times;</span>
+                                                    <h2>Thông tin tài khoản bác sĩ</h2>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form action="${pageContext.request.contextPath}/bacsi/suathongtin.html?maBacSi=${bs.maBacSi}" method="POST" class="form" role="form">
+                                                        <div class="row"> 
+                                                            <div class="col-xs-6 col-md-6">
+                                                                <label>Tài khoản:</label>
+                                                                <input class="form-control" value="${bs.taiKhoan}" name="taiKhoan" placeholder="Tên tài khoản" type="text" required autofocus/> 
+                                                            </div>
+                                                            <div class="col-xs-6 col-md-6">
+                                                                <label>Mật khẩu:</label> 
+                                                                <input class="form-control" value="${bs.matKhau}"name="matKhau" placeholder="Mật khẩu" type="text" required />
+                                                            </div>
+                                                        </div>
+
+                                                        <label>Họ và tên:</label>
+                                                        <input class="form-control" value="${bs.hoTen}" name="hoTen" placeholder="Họ và tên" type="text" required/>
+                                                        
+                                                        </br>
+
+                                                        <label>Giới tính:</label>
+                                                        </br>
+                                                        <label class="radio-inline">
+                                                            <input type="radio" name="gioiTinh" id="inlineCheckbox1" value="Nam" />
+                                                            Nam
+                                                        </label>
+                                                        <label class="radio-inline">
+                                                            <input type="radio" name="gioiTinh" id="inlineCheckbox2" value="Nữ" />
+                                                            Nữ
+                                                        </label>
+                                                        </br>
+                                                        </br>
+
+                                                        <label>Ngày sinh:</label>
+                                                        <input class="form-control" value="${bs.ngaySinh}" name="ngaySinh" placeholder="Ngày sinh" type="date" required/>
+                                                        
+                                                        </br>
+
+                                                        <div class="row">
+                                                            <div class="col-xs-6 col-md-6">
+                                                                <label>Email</label>
+                                                                <input class="form-control" value="${bs.email}" name="email" placeholder="Địa chỉ email" type="email" required/> 
+                                                            </div>
+                                                            <div class="col-xs-6 col-md-6">
+                                                                <label>ĐTDĐ:</label>
+                                                                <input class="form-control" value="${bs.soDienThoai}" name="soDienThoai" placeholder="Điện thoại" type="text" required /> 
+                                                            </div>
+                                                        </div>
+                                                        </br>
+
+                                                        <label>Quốc tịch:</label>
+                                                        <input class="form-control" value="${bs.quocTich}" name="quocTich" placeholder="Quốc tịch" type="text" required/>
+                                                        
+                                                        </br>
+
+                                                        <label>Nơi ở hiện tại:</label>
+                                                        <textarea class="form-control" name="noiOHienTai" placeholder="Nơi ở hiện tại" required>${bs.noiOHienTai}</textarea>
+                                                        
+                                                        </br>
+
+                                                        <label>Quê quán:</label>
+                                                        <textarea class="form-control" name="queQuan" placeholder="Quê quán" required>${bs.queQuan}</textarea>
+                                                        
+                                                        </br>
+
+                                                        <label>Số CMND:</label>
+                                                        <input class="form-control" value="${bs.soCMND}" name="soCMND" placeholder="Số CMND" type="text" required/>
+                                                        
+                                                        </br>
+
+                                                        <label>Năm kinh nghiệm:</label>
+                                                        <input class="form-control" value="${bs.namKinhNghiem}" name="namKinhNghiem" placeholder="Năm kinh nghiệm" type="text" required/>
+                                                                                            
+                                                        
+                                                        <button class="button button-block" type="submit">
+                                                            Cập nhật mới</button>    
+
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="hidden-xs">aaaaâ</td>
+                                    <td>bbbbbbbbbbbbb</td>
+                                    <td>ddddddđ</td>
+                                    <td style="text-align:center;">
+                                        <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
+                                        <a class="btn btn-primary" href="#qlbs_modal_update_2" data-toggle="modal" data-backdrop="false"><em class="fa fa-pencil"></em></a>
                                     </td>
                                 </tr>
                             
@@ -191,25 +239,7 @@
                         </table>
                     </div>
                     <div class="panel-footer">
-                        <div class="row">
-                            <div class="col col-xs-4">Page 1 of 5
-                            </div>
-                            <div class="col col-xs-8">
-                                <ul class="pagination hidden-xs pull-right">
-                                    <li><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
-                                </ul>
-                                <ul class="pagination visible-xs pull-right">
-                                    <li><a href="#">«</a></li>
-                                    <li><a href="#">»</a></li>
-                                </ul>
-                            </div>
-                        </div>
                         
-                    
                     </div>
                 </div>
             </div>
@@ -219,7 +249,6 @@
             
     </div>
     <script src="../js/modal-add.js"></script>
-    <script src="../js/modal-update.js"></script>
     <script src="../js/search.js"></script>
 </body>
 </html>

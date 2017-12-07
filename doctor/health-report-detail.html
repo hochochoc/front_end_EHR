@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Home admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/doctor.css">
+    <link rel="stylesheet" href="../css/chat-advice.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+    
+</head>
+<body>
+    <header class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="home-doctor.html">EHR.</a>
+            </div>
+            <div class="navbar-collapse collapse navbar-right">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="home-doctor.html">Trang chủ</a></li>
+                    <li ><a href="health-report-management.html">Bệnh án</a></li>
+                    <li><a href="chat-advice-doctor.html">Tư vấn sức khỏe</a></li>
+                    <li class="username dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="hidden-xs">Username</span><b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Đăng xuất</a></li>
+                            <li><a href="#">Đổi mật khẩu</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </header>
+    <div class="container mtb">
+        <div id="qlba_modal_update" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" id="close-update">&times;</span>
+                    <h2>Sửa bệnh án</h2>
+                </div>
+                <div class="modal-body">
+                    <div id="benhAn">
+                        <form action="/" method="POST" class="form" role="form">
+                            <div class="row">
+                                <div class="col-xs-6 col-md-6">
+                                    <label>Mã bác sĩ:</label>
+                                    <select class="form-control" name="maNguoiTao"> 
+                                        <option value="1">hongtt</option>
+                                        <option value="2">tucnguyen</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-6 col-md-6">
+                                    <label>Mã bệnh nhân:</label>
+                                    <select class="form-control" name="maBenhNhan"> 
+                                        <option value="1">hongtt</option>
+                                        <option value="2">tucnguyen</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6 col-md-6">
+                                    <label>Mã lĩnh vực:</label>
+                                    <select class="form-control" name="maLinhVuc"> 
+                                        <option value="1">hongtt</option>
+                                        <option value="2">tucnguyen</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-6 col-md-6">
+                                    <label>Ngày khám:</label>
+                                    <input class="form-control" name="ngayKham" placeholder="Ngày khám bệnh" type="date" required /> 
+                                </div>
+                            </div>
+                            <label>Lý do khám bệnh:</label>
+                            <textarea class="form-control" name="lyDoKham" placeholder="Lý do khám bệnh" required></textarea>
+                            
+                            </br>
+                
+                            <label>Quá trình bệnh lý:</label>
+                            <textarea class="form-control" name="quaTrinhBenhLy" placeholder="Quá trình bệnh lý" required></textarea>
+                            
+                            </br>
+                            <label>Tiền sử bệnh:</label>
+                            <textarea class="form-control" name="tieuSuLienQuan" placeholder="Tiền sử bệnh" required></textarea>
+                            
+                            </br>
+                
+                            <label>Hướng điều trị:</label>
+                            <textarea class="form-control" name="huongDieuTri" placeholder="Hướng điều trị" required></textarea>
+                            
+                            </br>
+                
+                            <label>Tóm tắt bệnh án:</label>
+                            <textarea class="form-control" name="tomTatBenhAn" placeholder="Tóm tắt bệnh án" required></textarea>
+                            
+                            </br>
+                
+                            <label>Khác:</label>
+                            <textarea class="form-control" name="khac" placeholder="Khác" ></textarea>
+                            <label>Ngày tạo:</label>
+                            <input class="form-control" name="ngayTao" placeholder="Ngày tạo bệnh án" type="date" required /> 
+                            </br>
+                            <button class="button button-block" type="submit">
+                                Thêm bệnh án</button>    
+                            
+                        </form>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-6">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Chi tiết bệnh án</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <p class="text-muted">
+                            Bác sĩ: Teen basc si
+                        </p>
+                        <p class="text-muted">
+                            Bệnh nhân: Tên bệnh nhân + Mã bệnh nhân
+                        </p>
+                        <p class="text-muted">
+                            Lĩnh vực: Tên lĩnh vực khám
+                        </p>
+                        <p class="text-muted">
+                            Ngày khám: Ngày khám
+                        </p>
+                        <p class="text-muted">
+                            Lý do khám bệnh: 
+                            <p>Lý do khám</p>
+                        </p>
+                        <p class="text-muted">
+                            Quá trình bệnh lý: 
+                            <p>Quá trình bệnh lý</p>
+                        </p>
+                        <p class="text-muted">
+                            Tiền sử bệnh: 
+                            <p>Tiền sử bệnh</p>
+                        </p>
+                        <p class="text-muted">
+                            Hướng điều trị
+                            <p>Huong dieu tri</p>
+                        </p>
+                        <p class="text-muted">
+                            Tóm tắt bệnh án
+                            <p>Tom tat benh an</p>
+                        </p>
+                        <p class="text-muted">
+                            Khác: <p>Khác </p>
+                        </p>
+                        <p class="text-muted">
+                            Ngày tạo: Ngày tạo bệnh án
+                        </p>
+                        <button type="button" class="button button-block" id="btn-modal-update">Sửa bệnh án</button>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+            </div>
+            <div class="col-xs-3 col-md-3">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Danh sách chẩn đoán</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <ul class="ba-list ba-list-in-box">
+                                 <!-- /.item -->
+                            <li class="item">
+                                <div class="list-info">
+                                    <p>01/11/2017
+                                        <span class="label label-danger pull-right"><em class="fa fa-trash"></em></span>
+                                        <span class="label label-info pull-right"   onclick="openTask(event, 'update-chd')"><em class="fa fa-pencil"></em></span>
+                                        <span class="label label-primary pull-right"   onclick="openTask(event, 'view-chd')"><em class="fa fa-book"></em></span></p>
+                                </div>
+                            </li>
+                            <li class="item">
+                                <div class="list-info">
+                                    <p>01/11/2017
+                                        <span class="label label-danger pull-right"><em class="fa fa-trash"></em></span>
+                                        <span class="label label-info pull-right"   onclick="openTask(event, 'update-chd')"><em class="fa fa-pencil"></em></span>
+                                        <span class="label label-primary pull-right"   onclick="openTask(event, 'view-chd')"><em class="fa fa-book"></em></span></p>
+                                </div>
+                            </li>
+                            
+                        </ul>
+                        <div id="content-pddt" class="well well-sm">
+                            <div id="update-chd" class="pddt">
+                                <form action="${pageContext.request.contextPath}/bacsi/viet_chan_doan.html" method="POST" class="form" role="form">
+                                    <label>Bệnh án:</label> 
+                                    <input class="form-control" name="maBenhAn" type="text" placeholder="BA0001" disabled/>
+                                    <label>Ngày chẩn đoán:</label> <input class="form-control"
+                                        name="ngayChanDoan" placeholder="Ngày chẩn đoán" type="date"
+                                        required />
+                                    <label>Bệnh chính</label>
+                                    <textarea class="form-control" name="benhChinh"
+                                        placeholder="Bệnh chính"></textarea>
+                                    <label>Bệnh kèm theo</label>
+                                    <textarea class="form-control" name="benhKemTheo"
+                                        placeholder="Bệnh kèm theo"></textarea>
+                                    <button class="btn btn-primary" type="submit">Sửa</button>
+                                    <button type="button"  class="btn btn-primary" style="float:right;" onclick="document.getElementById('update-chd').style.display='none'"><em class="fa fa-caret-up"></em></button>
+                                </form>
+                            </div>
+                            <div id="view-chd" class="pddt">
+                                <label>Mã bệnh án:</label> 
+                                <p>Mã bệnh án</p>
+                                <label>Ngày chẩn đoán:</label> 
+                                <p>Ngày chẩn đoán</p>
+                                <label>Bệnh chính:</label> 
+                                <p>Bệnh</p>
+                                <label>Bệnh kèm theo:</label>
+                                <p>Bệnh</p>
+                                <button type="button"  class="btn btn-primary" style="float:right;" onclick="document.getElementById('view-chd').style.display='none'"><em class="fa fa-caret-up"></em></button>                               
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                    
+                </div>
+            </div>
+            <div class="col-xs-3 col-md-3">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Danh sách phác đồ điều trị</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <ul class="ba-list ba-list-in-box">
+                                 <!-- /.item -->
+                            <li class="item">
+                                <div class="list-info">
+                                    <p>01/11/2017
+                                        <span class="label label-danger pull-right"><em class="fa fa-trash"></em></span>
+                                        <span class="label label-info pull-right"   onclick="openTask(event, 'update-pddt')"><em class="fa fa-pencil"></em></span>
+                                        <span class="label label-primary pull-right"   onclick="openTask(event, 'view-pddt')"><em class="fa fa-book"></em></span></p>
+                                </div>
+                            </li>
+                            
+                        </ul>
+                        <div id="content-pddt" class="well well-sm">
+                            <div id="update-pddt" class="pddt">
+                                <form action="/" method="POST" class="form" role="form">
+                                    <label>Mã bệnh án:</label> <input class="form-control"
+                                        name="maBenhAn" type="text"
+                                        placeholder="load ma benh an ra day" disabled></input>
+                                    
+                                    <label>Thời gian:</label> <input class="form-control"
+                                        name="ngayChanDoan" placeholder="Ngày chẩn đoán" type="date"
+                                        required />
+                                       
+                                    <label>Tiêu đề:</label> <input class="form-control"
+                                        name="tieuDe" placeholder="Tiêu đề" type="text">
+                                        
+                                    <label>Ngày tạo:</label> <input class="form-control"
+                                        name="ngayTao" placeholder="Ngày tạo phác đồ" type="date"
+                                        required />
+                                        
+                                    <label>Nội dung:</label>
+                                    <textarea class="form-control" name="noiDung"
+                                        placeholder="Nội dung phác đồ"></textarea>
+                                    <label>Nhắc nhở:</label> </br> <label class="radio-inline"> <input
+                                        type="radio" name="nhacNho" id="inlineCheckbox1" value="1" />
+                                        Có
+                                    </label> <label class="radio-inline"> <input type="radio"
+                                        name="nhacNho" id="inlineCheckbox2" value="0" /> Không
+                                    </label> 
+                                    </br></br>
+                                    <button class="btn btn-primary" type="submit">Sửa</button>
+                                    <button type="button"  class="btn btn-primary" style="float:right;" onclick="document.getElementById('update-pddt').style.display='none'"><em class="fa fa-caret-up"></em></button>
+                                </form>
+                            </div>
+                            <div id="view-pddt" class="pddt">
+                                <label>Mã bệnh án:</label> 
+                                <p>Mã bệnh án</p>
+                                <label>Thời gian:</label> 
+                                <p>Thời gian</p>
+                                <label>Tiêu đề:</label> 
+                                <p>Tiêu đề</p>
+                                <label>Ngày tạo:</label>
+                                <p>Ngày tạo</p>
+                                <label>Nội dung:</label> 
+                                <p>Nội dung</p>
+                                <label>Nhắc nhở:</label> 
+                                <p>Có</p>
+                                <button type="button"  class="btn btn-primary" style="float:right;" onclick="document.getElementById('view-pddt').style.display='none'"><em class="fa fa-caret-up"></em></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/pddt-update.js"></script>
+    <script src="../js/modal-update.js"></script>
+</body>
+</html>

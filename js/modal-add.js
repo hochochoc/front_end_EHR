@@ -1,21 +1,21 @@
-var modal = document.getElementById('qlba-modal');
+var modal_add = document.getElementById('qlba-modal');
 var btn_add = document.getElementById('btn-modal-add');
 
 
-var span = document.getElementsByClassName("close")[0]
+var span = document.getElementById("close-add");
 
 btn_add.onclick = function() {
-    modal.style.display = "block";
-}
+    modal_add.style.display = "block";
+    }
 
 
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
-    modal.style.display = "none";
+    modal_add.style.display = "none";
 }
 window.onclick = function(event){
-    if (event.target == modal){
-        modal.style.display = "none";
+    if (event.target == modal_add){
+        modal_add.style.display = "none";
     }
 }

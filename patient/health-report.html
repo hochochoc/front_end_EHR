@@ -45,113 +45,142 @@
     </header>
     <div class="container mtb">
         <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 centered well well-sm">
-                    <div class="tab">
-                        <button class="tablinks" onclick="openTab(event, 'benhAn')" id="defaultOpen">Bệnh án</button>
-                        <button class="tablinks" onclick="openTab(event, 'chanDoan')">Chẩn đoán bệnh</button>
-                        <button class="tablinks" onclick="openTab(event, 'phapDo')">Phác đồ điều trị</button>
+            <div class="col-xs-6 col-md-6">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Chi tiết bệnh án</h3>
                     </div>
-               <div id="benhAn" class="tabcontent">
-                    <div class="form">
-                        <div class="row">
-                            <div class="col-xs-6 col-md-6">
-                                <label>Bác sĩ:</label>
-                                <p>Tên bác sĩ</p>
-                            </div>
-                            <div class="col-xs-6 col-md-6">
-                                <label>Bệnh nhân:</label>
-                                <p>Tên bệnh nhân (thêm thông tin kèm theo để phân biệt)</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-6 col-md-6">
-                                <label>Lĩnh vực:</label>
-                                <p>Tên lĩnh vực</p>
-                            </div>
-                            <div class="col-xs-6 col-md-6">
-                                <label>Ngày khám:</label>
-                                <p>Ngày khám</p>
-                            </div>
-                        </div>
-                        <label>Lý do khám bệnh:</label>
-                        <p>Lý do khám bệnh </p>
-                        
-                        </br>
-            
-                        <label>Quá trình bệnh lý:</label>
-                        <p>Quá trình bệnh lý</p>
-                        
-                        </br>
-                        <label>Tiền sử bệnh:</label>
-                        <p>Tiền sử bệnh</p>
-                        
-                        </br>
-            
-                        <label>Hướng điều trị:</label>
-                        <p>Hướng điều trị</p>
-                        
-                        </br>
-            
-                        <label>Tóm tắt bệnh án:</label>
-                        <p>Tóm tắt bệnh án</p>
-                        
-                        </br>
-            
-                        <label>Khác:</label>
-                        <p>Khác aaaaaaaaaaaaaaaaaaaaaaaaaaaaAAA,</p>
-                        <label>Ngày tạo:</label>
-                        <p>Ngày tạo</p>
-                        </br>
-                        
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <p class="text-muted">
+                            Bác sĩ: Teen basc si
+                        </p>
+                        <p class="text-muted">
+                            Bệnh nhân: Tên bệnh nhân + Mã bệnh nhân
+                        </p>
+                        <p class="text-muted">
+                            Lĩnh vực: Tên lĩnh vực khám
+                        </p>
+                        <p class="text-muted">
+                            Ngày khám: Ngày khám
+                        </p>
+                        <p class="text-muted">
+                            Lý do khám bệnh: 
+                            <p>Lý do khám</p>
+                        </p>
+                        <p class="text-muted">
+                            Quá trình bệnh lý: 
+                            <p>Quá trình bệnh lý</p>
+                        </p>
+                        <p class="text-muted">
+                            Tiền sử bệnh: 
+                            <p>Tiền sử bệnh</p>
+                        </p>
+                        <p class="text-muted">
+                            Hướng điều trị
+                            <p>Huong dieu tri</p>
+                        </p>
+                        <p class="text-muted">
+                            Tóm tắt bệnh án
+                            <p>Tom tat benh an</p>
+                        </p>
+                        <p class="text-muted">
+                            Khác: <p>Khác </p>
+                        </p>
+                        <p class="text-muted">
+                            Ngày tạo: Ngày tạo bệnh án
+                        </p>
                     </div>
+                    <!-- /.box-body -->
                 </div>
-
-                <div id="chanDoan" class="tabcontent">
-                    <div class="form">
-                        <div class="row">
-                            <div class="col-xs-6 col-md-6">
-                                <label>Bệnh án: Mã bệnh án</label> 
-                            </div>
-                            <div class="col-xs-6 col-md-6">
-                                <label>Ngày chẩn đoán: 27/11/1992</label>
+            </div>
+            <div class="col-xs-3 col-md-3">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Danh sách chẩn đoán</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <ul class="ba-list ba-list-in-box">
+                                 <!-- /.item -->
+                            <li class="item">
+                                <div class="list-info">
+                                    <p>01/11/2017
+                                        <span class="label label-danger pull-right"><em class="fa fa-trash"></em></span>
+                                        <span class="label label-primary pull-right"   onclick="openTask(event, 'view-chd')"><em class="fa fa-book"></em></span></p>
+                                </div>
+                            </li>
+                            <li class="item">
+                                <div class="list-info">
+                                    <p>01/11/2017
+                                        <span class="label label-danger pull-right"><em class="fa fa-trash"></em></span>
+                                        <span class="label label-primary pull-right"   onclick="openTask(event, 'view-chd')"><em class="fa fa-book"></em></span></p>
+                                </div>
+                            </li>
+                            
+                        </ul>
+                        <div id="content-pddt" class="well well-sm">
+                            <div id="view-chd" class="pddt">
+                                <label>Mã bệnh án:</label> 
+                                <p>Mã bệnh án</p>
+                                <label>Ngày chẩn đoán:</label> 
+                                <p>Ngày chẩn đoán</p>
+                                <label>Bệnh chính:</label> 
+                                <p>Bệnh</p>
+                                <label>Bệnh kèm theo:</label>
+                                <p>Bệnh</p>
+                                <button type="button"  class="btn btn-primary" style="float:right;" onclick="document.getElementById('view-chd').style.display='none'"><em class="fa fa-caret-up"></em></button>                                
                             </div>
                         </div>
-                        <label>Bệnh chính</label>
-                        <p>Bệnh chính AA</p>
-                        <label>Bệnh kèm theo</label>
-                        <p>Bệnh kèm theo AA</p>
-                        
                     </div>
+                    <!-- /.box-body -->
+                    
                 </div>
-
-                <div id="phapDo" class="tabcontent">
-                    <div class="form">
-                        <div class="row">
-                            <div class="col-xs-6 col-md-6">
-                                <label>Mã bệnh án: mã bệnh án</label>
-                            </div>
-                            <div class="col-xs-6 col-md-6">
-                                <label>Thời gian: ngày chẩn đoán</label>
+            </div>
+            <div class="col-xs-3 col-md-3">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Danh sách phác đồ điều trị</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <ul class="ba-list ba-list-in-box">
+                                 <!-- /.item -->
+                            <li class="item">
+                                <div class="list-info">
+                                    <p>01/11/2017
+                                        <span class="label label-danger pull-right"><em class="fa fa-trash"></em></span>
+                                        <span class="label label-primary pull-right" onclick="openTask(event, 'view-pddt')"><em class="fa fa-book"></em></span></p>
+                                </div>
+                            </li>
+                            
+                        </ul>
+                        <div id="content-pddt" class="well well-sm">
+                            <div id="view-pddt" class="pddt">
+                                <label>Mã bệnh án:</label> 
+                                <p>Mã bệnh án</p>
+                                <label>Thời gian:</label> 
+                                <p>Thời gian</p>
+                                <label>Tiêu đề:</label> 
+                                <p>Tiêu đề</p>
+                                <label>Ngày tạo:</label>
+                                <p>Ngày tạo</p>
+                                <label>Nội dung:</label> 
+                                <p>Nội dung</p>
+                                <label>Nhắc nhở:</label> 
+                                <p>Có</p>
+                                <button type="button"  class="btn btn-primary" style="float:right;" onclick="document.getElementById('view-pddt').style.display='none'"><em class="fa fa-caret-up"></em></button>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-xs-6 col-md-6">
-                                <label>Tiêu đề: tiêu đề</label>
-                            </div>
-                            <div class="col-xs-6 col-md-6">
-                                <label>Ngày tạo: ngày tạo phác đồ</label>
-                            </div>
-                        </div>
-                        <label>Nội dung:</label>
-                        <p>Nội dung phác đồ</p>
-                        <label>Nhắc nhở: Có hoặc ko</label>
                         
                     </div>
+                    <!-- /.box-body -->
                 </div>
             </div>
         </div>
 
     </div>
     <script src="../js/tab-report-management.js"></script>
+    <script src="../js/pddt-update.js"></script>
 </body>
 </html>

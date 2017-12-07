@@ -46,7 +46,7 @@
         <div id="qlba-modal" class="modal">
             <div class="modal-content">
                 <div class="modal-header">
-                    <span class="close">&times;</span>
+                    <span class="close" id="close-add">&times;</span>
                     <h2>Thêm bệnh án</h2>
                 </div>
                 <div class="modal-body">
@@ -209,13 +209,13 @@
                         <div class="row">
                             
                             <div class="col-xs-6 col-md-6">
-                                <legend> Danh sách tài khoản bác sĩ</legend>
+                                <legend> Danh sách bệnh án quản lý</legend>
                             </div>
                             <div class="col-xs-6 col-md-6">
-                                <button id="btn-modal-add" class="button button-block">Add a new doctor account</button>
+                                <button id="btn-modal-add" class="button button-block">Thêm mới bệnh án</button>
                             </div>
                            
-                            <input type="text" id="search_text" onkeyup="search()" placeholder="Gõ tên hoặc mã bác sĩ">  
+                            <input type="text" id="search_text" onkeyup="search()" placeholder="Gõ mã bệnh án ...">  
                             
                         </div>
                     </div>
@@ -240,40 +240,30 @@
                                     <td>ddddddđ</td>
                                     <td style="text-align:center;">
                                         <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
-                                        <a class="btn btn-primary" id="btn-modal-update"><em class="fa fa-pencil"></em></a>
+                                        <a class="btn btn-info" href="health-report-detail.html"><em class="fa fa-book"></em></a>
                                     </td>
                                 </tr>
-                            
+                                <tr>
+                                    <td class="hidden-xs">aaaaâ</td>
+                                    <td>bbbbbbbbbbbbb</td>
+                                    <td>ddddddđ</td>
+                                    <td>ddddddđ</td>
+                                    <td style="text-align:center;">
+                                        <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
+                                        <a class="btn btn-info" href="health-report-detail.html"><em class="fa fa-book"></em></a>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
                     <div class="panel-footer">
-                        <div class="row">
-                            <div class="col col-xs-4">Page 1 of 5
-                            </div>
-                            <div class="col col-xs-8">
-                                <ul class="pagination hidden-xs pull-right">
-                                    <li><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
-                                </ul>
-                                <ul class="pagination visible-xs pull-right">
-                                    <li><a href="#">«</a></li>
-                                    <li><a href="#">»</a></li>
-                                </ul>
-                            </div>
-                        </div>
                         
-                    
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <script src="../js/modal-add.js"></script>    
-    <script src="../js/modal-update.js"></script>
     <script src="../js/search.js"></script>  
     <script src="../js/tab-report-management.js"></script>
 </body></html>
