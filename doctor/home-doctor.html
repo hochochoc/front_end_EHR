@@ -43,6 +43,36 @@
         </div>
     </header>
     <div class="container mtb">
+        <div id="qlba-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" id="close-add">&times;</span>
+                    <h2>Thêm chứng chỉ mới</h2>
+                </div>
+                <div class="modal-body">
+                    <form action="/" method="POST" class="form" role="form">
+                        <input class="form-control" name="tenChungChi" placeholder="tên chứng chỉ " type="text" required/>
+                        <div class="row">
+                            <div class="col-xs-6 col-md-6">
+                                <input class="form-control" name="ngayNhan" placeholder="load mã chứng chỉ mới ra đây" type="date" required/>
+                            </div>
+                            <div class="col-xs-6 col-md-6">
+                                <input class="form-control" name="ngayHetHan" placeholder="load mã chứng chỉ mới ra đây" type="date"/>
+                            </div>
+                        </div>
+                        <textarea class="form-control" name="moTa" placeholder="Mô tả" required></textarea>
+                        <button class="button button-block" type="submit">
+                            Thêm</button>    
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                
+                </div>
+                
+            </div>
+        </div>
+        
         <div class="row">
             <div class="col-xs-3 col-md-3">
                 <div class="box box-primary">
@@ -81,9 +111,70 @@
 
                         <hr>
 
-                        <strong><i class="fa fa-file-text-o margin-r-5"></i> Notes</strong>
+                        <strong><i class="fa fa-file-text-o margin-r-5"></i> Chứng chỉ</strong>
+                        <ul class="ba-list ba-list-in-box">
+                            <li class="item">
+                                <div class="list-info">
+                                    <p>IELTS
+                                        <span class="label label-danger pull-right"><em class="fa fa-trash"></em></span>
+                                        <span class="label label-info pull-right" data-target="#qlcc_modal_update_1" data-toggle="modal" data-backdrop="false"><em class="fa fa-book"></em></span>
+                                        <div style="text-align:left;" id="qlcc_modal_update_1" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <span class="close" id="close-update" data-dismiss="modal">&times;</span>
+                                                    <h2>Chứng chỉ xem chi tiết</h2>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-md-6 well">
+                                                            <strong><i class="fa fa-book margin-r-5"></i>Thông tin chứng chỉ</strong>
+                                                            <br>
+                                                            <p class="text-muted">
+                                                                Tên chứng chỉ: Tên chứng chỉ
+                                                            </p>
+                                                            <p class="text-muted">
+                                                                Thời gian: ngày nhận - ngày hết hạn 
+                                                            </p>
+                                                            <p class="text-muted">
+                                                                Mô tả:
+                                                                <p>Mô tả</p>
+                                                            </p>
+                                                            <a data-toggle="collapse" data-target="#update_ccbs">Thay đổi thông tin chứng chỉ</a>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div id="update_ccbs" class="collapse">
+                                                                <form action="/" method="POST" class="form" role="form">
+                                                                    <input class="form-control" name="tenChungChi" placeholder="tên chứng chỉ " type="text" required/>
+                                                                    <div class="row">
+                                                                        <div class="col-xs-6 col-md-6">
+                                                                            <input class="form-control" name="ngayNhan" placeholder="load mã chứng chỉ mới ra đây" type="date" required/>
+                                                                        </div>
+                                                                        <div class="col-xs-6 col-md-6">
+                                                                            <input class="form-control" name="ngayHetHan" placeholder="load mã chứng chỉ mới ra đây" type="date"/>
+                                                                        </div>
+                                                                    </div>
+                                                                    <textarea class="form-control" name="moTa" placeholder="Mô tả" required></textarea>
+                                                                    <button class="button button-block" type="submit">
+                                                                        Thêm</button>    
 
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                   
+                                                </div>
+                                                <div class="modal-footer">
+                                                
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </p>
+                                </div>
+                            </li>
+                            
+                        </ul>
                     </div>
                     <!-- /.box-body -->
                 </div>
@@ -91,7 +182,18 @@
             <div class="col-xs-8 col-md-8">
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Cập nhật tài khoản</h3>
+                        <div class="row">
+                            
+                            <div class="col-xs-6 col-md-6">
+                                <h3 class="box-title">Cập nhật tài khoản</h3>
+                            </div>
+                            <div class="col-xs-6 col-md-6">
+                                <button id="btn-modal-add" class="button button-block">Thêm mới chứng chỉ</button>
+                            </div>
+                           
+                                                       
+                        </div>
+   
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -176,5 +278,6 @@
             </div>
         </div>
     </div>
+    <script src="../js/modal-add.js"></script>
 </body>
 </html>
