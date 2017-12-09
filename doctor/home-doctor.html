@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/modal.css">
     <link rel="stylesheet" href="../css/doctor.css">
     <link rel="stylesheet" href="../css/chat-advice.css">
@@ -35,7 +36,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="hidden-xs">Username</span><b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Đăng xuất</a></li>
-                            <li><a href="#">Đổi mật khẩu</a></li>
+                            <!--Thêm mới phần sửa mật khẩu, xóa chỗ này đi-->
                         </ul>
                     </li>
                 </ul>
@@ -72,6 +73,45 @@
                 
             </div>
         </div>
+        <!--Thêm mới phần sửa mật khẩu-->
+        <div style="text-align:left;" id="passwd-change" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" id="close-update" data-dismiss="modal">&times;</span>
+                    <h2>Đổi mật khẩu</h2>
+                </div>
+                <div class="modal-body">
+                        
+                    <form action="/" method="POST" class="form" role="form">
+                        <label>Mật khẩu cũ:</label>
+                        <input class="form-control" name="matKhauCu" type="password" required/>
+                        <div class="row">
+                            <div class="col-xs-6 col-md-6">
+                                <label>Mật khẩu mới:</label>
+                                <input class="form-control" name="matKhau" id="password" type="password" required/>
+                            </div>
+                            <div class="col-xs-6 col-md-6">
+                                <label>Nhập lại mật khẩu mới:</label>
+                                <input class="form-control" name="matKhauXN" type="password" id="confirm_password" required/>
+                                <span id='message'></span>
+                            </div>
+                        </div>
+                        <button class="button button-block" type="submit"  onclick="checkPW()">
+                            Cập nhật</button>    
+
+                    </form>
+                                                                                
+                </div>
+                <div class="modal-footer">
+                
+                </div>
+                
+            </div>
+                            
+                            
+        </div>
+        <!--Thêm mới phần sửa mật khẩu-->
         
         <div class="row">
             <div class="col-xs-3 col-md-3">
@@ -203,10 +243,13 @@
                                     <label>Tài khoản:</label>
                                     <input class="form-control" value="${bs.taiKhoan}" name="taiKhoan" placeholder="Tên tài khoản" type="text" required autofocus/> 
                                 </div>
+                                <!--Thêm mới phần sửa mật khẩu-->
                                 <div class="col-xs-6 col-md-6">
-                                    <label>Mật khẩu:</label> 
-                                    <input class="form-control" value="${bs.matKhau}"name="matKhau" placeholder="Mật khẩu" type="text" required />
+                                    <label>Mật khẩu:</label>
+                                    <br>
+                                    <button class="btn btn-primary" href="#passwd-change" data-toggle="modal" data-backdrop="false">Thay mới</button>
                                 </div>
+                                <!--Thêm mới phần sửa mật khẩu-->
                             </div>
 
                             <label>Họ và tên:</label>
@@ -278,6 +321,39 @@
             </div>
         </div>
     </div>
+    <div id="footerwrap">
+	 	<div class="container">
+		 	<div class="row">
+		 		<div class="col-lg-4">
+		 			<h4>Về chúng tôi</h4>
+		 			<div class="hline-w"></div>
+		 			<p>Trang web quản lý bệnh án điện tử - Đề tài Project 3 đồ án Hệ thống thông tin</p>
+		 		</div>
+		 		<div class="col-lg-4">
+		 			<h4>Liên lạc</h4>
+		 			<div class="hline-w"></div>
+		 			<p>
+		 				<a href="#"><i class="fa fa-dribbble"></i></a>
+		 				<a href="#"><i class="fa fa-facebook"></i></a>
+		 				<a href="#"><i class="fa fa-twitter"></i></a>
+		 				<a href="#"><i class="fa fa-instagram"></i></a>
+		 				<a href="#"><i class="fa fa-tumblr"></i></a>
+		 			</p>
+		 		</div>
+		 		<div class="col-lg-4">
+		 			<h4>Địa chỉ</h4>
+		 			<div class="hline-w"></div>
+		 			<p>
+		 				Số 1<br/>
+		 				Đại Cồ Việt, Hà Nội<br/>
+		 				Đại học Bách Khoa Hà Nội<br/>
+		 			</p>
+		 		</div>
+		 	
+		 	</div>
+	 	</div>
+	 </div>
     <script src="../js/modal-add.js"></script>
+    <script src="../js/change-pwd.js"></script><!--Thêm mới phần sửa mật khẩu-->
 </body>
 </html>

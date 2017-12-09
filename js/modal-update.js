@@ -4,7 +4,6 @@ console.log(btn_update);
 var span = document.getElementById("close-update");
 
 btn_update.onclick = function() {
-    alert("a");
     modal_update.style.display = "block";
     
 }
