@@ -1,33 +1,100 @@
-<div style="text-align:left;" id="passwd-change" class="modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                                
-    <div class="modal-content">
-        <div class="modal-header">
-            <span class="close" id="close-update" data-dismiss="modal">&times;</span>
-            <h2>Đổi mật khẩu</h2>
-        </div>
-        <div class="modal-body">
-                
-            <form action="/" method="POST" class="form" role="form">
-                <label>Mật khẩu cũ:
-                <input class="form-control" name="matKhauCu" type="password" required style="width:50%"/>
-                </label>
-                <label>Mật khẩu mới:
-                <input class="form-control" name="matKhau"  type="password" required style="width:50%"/>
-                </label>
-                <label>Nhập lại mật khẩu mới:
-                <input class="form-control" name="matKhauXN" type="password" required style="width:50%"/>
-                </label>
-                <button class="button button-block" type="submit" onclick="checkPW()">
-                    Cập nhật</button>    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Home admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/change-pwd.css">
+    <link rel="stylesheet" href="css/header.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+    
+</head>
+	<body>
+        <header class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="home-admin.html">EHR.</a>
+                </div>
+                <div class="navbar-collapse collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li><a href="home-admin.html">Trang chủ</a></li>
+                        <li><a href="field-management.html">Quản lý lĩnh vực khám chữa</a></li>
+                        <li class="dropdown active">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Quản lý người dùng<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li class="active"><a href="doctor-management.html">Bác sĩ</a></li>
+                                <li><a href="patient-management.html">Bệnh nhân</a></li>
+                            </ul>
+                        </li>
+                        <li class="username dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="hidden-xs">Username</span><b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Đăng xuất</a></li>
+                                
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </header>
+		<div class="container">
+			<div class="row change-pwd">
+				<div class="panel-heading">
+	               <div class="panel-title text-center">
+	               		<h1 class="title">Đổi mật khẩu</h1>
+	               		<hr />
+	               	</div>
+	            </div> 
+				<div class="change-pwd-login change-pwd-center">
+                    <form action="/" class="form-horizontal" method="POST" class="form" role="form">
+                        <div class="form-group">
+							<div class="cols-sm-10">
+                                <div class="input-group">
+                                    <label for="matKhauCu" class="cols-sm-2 control-label">Mật khẩu cũ:</label>
+                                    <input type="password" class="form-control" name="matKhauCu" id="matKhauCu" required/>
+                                </div>
+							    
+							</div>
+						</div>
+                        <div class="form-group">
+							<div class="cols-sm-10">
+                                <div class="input-group">
+                                    <label for="matKhauCu" class="cols-sm-2 control-label">Mật khẩu mới:</label>
+                                    <input type="password" class="form-control" name="matKhauMoi" id="password" required/>
+                                </div>
+							    
+							</div>
+                        </div>
+                        <div class="form-group">
+                            <div class="cols-sm-10">
+                                <div class="input-group">
+                                    <label for="matKhauXN" class="cols-sm-2 control-label">Xác nhận mật khẩu:</label>
+                                    <input type="password" class="form-control" name="matKhauXN" id="confirm_password" required/>
+                                    
+                                </div>
+                                <span id='message'></span>
+							    
+							</div>
+						</div>
+                        
+                        <div class="form-group">
+							<button type="button" class="btn btn-primary btn-lg btn-block change-pwd-button" onclick="checkPW()">Đổi mật khẩu</button>
+						</div>
+                    </form>
+	
+				</div>
+			</div>
+		</div>
 
-            </form>
-                                                                        
-        </div>
-        <div class="modal-footer">
-        
-        </div>
-        
-    </div>
-                    
-                    
-</div>
+	<script src="js/change-pwd.js"></script>
+	</body>
+</html>
